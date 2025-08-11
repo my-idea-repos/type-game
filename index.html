@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>打字练习小游戏 - 在线打字速度测试与键盘指法训练</title>
+  <meta name="description" content="免费在线打字练习小游戏，提升打字速度与准确率，内含键盘指法指南，适合学生与办公人群训练打字技能。">
+  <meta name="keywords" content="打字练习,打字小游戏,打字速度测试,键盘指法训练,在线打字">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="打字练习小游戏 - 提升打字速度与准确率" />
+  <meta property="og:description" content="免费在线打字小游戏，内含键盘指法指南，提升打字速度与准确率。" />
+  <meta property="og:image" content="static/og-image.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Schema.org Structured Data for Game -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "打字练习小游戏",
+      "description": "免费在线打字小游戏，提升打字速度与准确率，内含键盘指法指南。",
+      "genre": ["教育游戏", "打字训练"],
+      "url": "https://example.com/type-game",
+      "image": "https://example.com/static/og-image.jpg",
+      "inLanguage": "zh-CN"
+    }
+    </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/bootstrap.min.css" />
+  <link rel="stylesheet" href="static/animate.min.css" />
+  <link rel="stylesheet" href="static/type-game.css" />
+
+  <!-- jQuery（defer 延迟执行） -->
+  <script src="static/jquery-3.6.0.min.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1 class="visually-hidden">打字练习小游戏 - 提升打字速度与准确率</h1>
+  </header>
+
+  <main>
+    <section class="score-board info" aria-label="分数信息">
+      分数: <span id="score">0</span> &nbsp;&nbsp;最高分: <span id="highScore">0</span>
+    </section>
+
+    <section class="level-board info" aria-label="难度等级">
+      难度等级: <span id="level">1</span>
+    </section>
+
+    <section class="miss-board info" aria-label="漏掉次数">
+      漏掉: <span id="miss">0</span> / <span id="max-miss"></span>
+    </section>
+
+    <!-- 暂停按钮 -->
+    <div class="pause-board info">
+      <button class="btn btn-warning btn-sm" id="pauseBtn" aria-label="暂停游戏">暂停</button>
+    </div>
+
+    <div class="keyboard-guide info">
+      <a href="guide.html" target="_blank" rel="noopener">键盘指法指南</a>
+    </div>
+
+    <div class="keyboard-guide info">每获得 <span class="upgrade-score"></span> 分升级</div>
+
+    <!-- 开始界面 -->
+    <div class="overlay-screen" id="startScreen">
+      <h2 class="mb-4">打字练习小游戏</h2>
+      <div class="keyboard-guide">
+        <a href="guide.html" target="_blank" rel="noopener">键盘指法指南</a>
+      </div>
+      <button class="btn-big" id="startBtn">开始游戏</button>
+      <div class="countdown" id="countdown"></div>
+      <div>按【空格键】暂停</div>
+      <div>每获得 <span class="upgrade-score"></span> 分升级</div>
+      
+      <a href="mailto:zhoujunwu@hotmail.com">联系我们</a>
+    </div>
+
+    <!-- 结束界面 -->
+    <div class="overlay-screen" id="endScreen" style="display: none">
+      <h2 class="mb-4">游戏结束</h2>
+      <p class="mb-2">你本局得分: <span id="finalScore">0</span></p>
+      <p class="mb-2">最高分: <span id="finalHighScore">0</span></p>
+      <h3 class="mt-4">最近 5 局记录</h3>
+      <ul class="rank-list" id="recentScoresList"></ul>
+      <button class="btn-big mt-4" id="restartBtn">重新开始</button>
+      <div class="keyboard-guide">
+        <a href="guide.html" target="_blank" rel="noopener">键盘指法指南</a>
+      </div>
+      <a href="mailto:zhoujunwu@hotmail.com">联系我们</a>
+    </div>
+
+    <!-- 背景音乐 -->
+    <audio id="bgm" src="static/SoundHelix-Song-1.mp3" loop aria-label="背景音乐"></audio>
+
+    <!-- 爆炸音效 -->
+    <audio id="explodeSound" src="static/mixkit-arcade-game-explosion-2759.wav" aria-label="爆炸音效"></audio>
+  </main>
+
+  <!-- <footer>
+    <p>© 2025 打字练习小游戏 | 提升打字速度与准确率</p>
+  </footer> -->
+
+  <!-- 游戏逻辑 -->
+  <script type="module" src="static/type-game.js" defer></script>
+</body>
+
+</html>
